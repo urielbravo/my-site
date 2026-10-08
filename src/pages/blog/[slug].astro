@@ -1,14 +1,10 @@
 ---
 import { render } from "astro:content";
-import Marquee from "../../components/Marquee.astro";
 import Post from "../../components/Post.astro";
-import RetroFooter from "../../components/RetroFooter.astro";
-import RetroHeader from "../../components/RetroHeader.astro";
-import Sidebar from "../../components/Sidebar.astro";
-import SiteNav from "../../components/SiteNav.astro";
 import { site } from "../../data/site.js";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogLayout from "../../layouts/BlogLayout.astro";
 import {
+    categoryHref,
     getSortedPosts,
     toCategories,
     toRecentPosts,
@@ -27,23 +23,23 @@ const recentPosts = toRecentPosts(allPosts);
 const categories = toCategories(allPosts);
 ---
 
-<BaseLayout title={`${post.data.title} · ${site.name}`}>
-    <div class="retro-wrapper">
-        <RetroHeader />
-
-        <SiteNav />
-        <Marquee message={site.marquee} />
-
-        <div class="content-grid">
-            <div class="posts">
-                <Post title={post.data.title} date={post.data.date}>
-                    <Content />
-                </Post>
-            </div>
-
-            <Sidebar recentPosts={recentPosts} categories={categories} />
-        </div>
-
-        <RetroFooter />
-    </div>
-</BaseLayout>
+<BlogLayout
+    title={`${post.data.title} · ${site.name}`}
+    recentPosts={recentPosts}
+    categories={categories}
+>
+    <Post
+        title={post.data.title}
+        date={post.data.date}
+        image={post.data.image}
+        imageAlt={post.data.imageAlt}
+        categories={[
+            {
+                name: post.data.category,
+                href: categoryHref(post.data.category),
+            },
+        ]}
+    >
+        <Content />
+    </Post>
+</BlogLayout>

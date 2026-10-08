@@ -33,6 +33,65 @@
     background: #1a1a2e;
 }
 
+/* ---------- COVER IMAGE ---------- */
+.post-page-cover {
+    margin: 0 0 1.2rem;
+    text-align: center;
+}
+
+.post-page-cover img {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    margin: 0 auto;
+    border: 3px solid #00ffff;
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 #ff00ff;
+}
+
+/* ---------- CATEGORIES ---------- */
+.post-page-categories {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.4rem;
+}
+
+.post-page-categories-label {
+    font-size: 1.2rem;
+    color: #99ccff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.post-page-category {
+    display: inline-block;
+    background: #222;
+    border: 2px outset #ff00ff;
+    color: #00ff00;
+    font-family: "VT323", monospace;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-decoration: none;
+    text-shadow: 0 0 4px lime;
+    padding: 0.1rem 0.6rem;
+    box-shadow: 2px 2px 0 #330033;
+}
+
+.post-page-category:hover {
+    color: #ffff00;
+    background: #330066;
+}
+
+.post-page-category:active {
+    border-style: inset;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
 /* ---------- RENDERED MARKDOWN ---------- */
 .post-page-body {
     color: #b3ffb3;

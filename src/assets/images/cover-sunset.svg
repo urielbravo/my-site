@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Synthwave sunset over a neon wireframe grid">
+    <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1a0033" />
+            <stop offset="1" stop-color="#330066" />
+        </linearGradient>
+        <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffff00" />
+            <stop offset="1" stop-color="#ff00ff" />
+        </linearGradient>
+        <clipPath id="sunClip">
+            <circle cx="400" cy="230" r="105" />
+        </clipPath>
+    </defs>
+
+    <rect width="800" height="450" fill="url(#sky)" />
+
+    <g fill="#00ffff">
+        <circle cx="70" cy="55" r="2" />
+        <circle cx="165" cy="35" r="3" />
+        <circle cx="290" cy="70" r="2" />
+        <circle cx="505" cy="45" r="2" />
+        <circle cx="625" cy="75" r="3" />
+        <circle cx="730" cy="40" r="2" />
+        <circle cx="430" cy="25" r="2" />
+    </g>
+
+    <circle cx="400" cy="230" r="105" fill="url(#sun)" />
+    <g clip-path="url(#sunClip)" fill="#1a0033">
+        <rect x="285" y="228" width="230" height="5" />
+        <rect x="285" y="242" width="230" height="7" />
+        <rect x="285" y="258" width="230" height="9" />
+        <rect x="285" y="276" width="230" height="12" />
+        <rect x="285" y="298" width="230" height="16" />
+    </g>
+
+    <rect x="0" y="335" width="800" height="4" fill="#00ffff" />
+
+    <g stroke="#ff00ff" stroke-width="2" opacity="0.9">
+        <path d="M0 450 L400 339" />
+        <path d="M160 450 L400 339" />
+        <path d="M320 450 L400 339" />
+        <path d="M480 450 L400 339" />
+        <path d="M640 450 L400 339" />
+        <path d="M800 450 L400 339" />
+        <path d="M0 352 H800" />
+        <path d="M0 378 H800" />
+        <path d="M0 412 H800" />
+    </g>
+</svg>

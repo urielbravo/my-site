@@ -1,0 +1,68 @@
+---
+import { pageHref, pageNumbers } from "../utils/pagination.js";
+import "./Pagination.css";
+
+interface Props {
+    currentPage: number;
+    lastPage: number;
+    /** Where this listing lives, e.g. "/" or "/category/games/". */
+    basePath?: string;
+}
+
+const { currentPage, lastPage, basePath = "/" } = Astro.props;
+
+// Nothing to page through yet, so render nothing at all.
+const needed = lastPage > 1;
+---
+
+{
+    needed && (
+        <nav class="pagination" aria-label="Pagination">
+            {currentPage > 1 ? (
+                <a
+                    class="pagination-button"
+                    href={pageHref(currentPage - 1, basePath)}
+                >
+                    ← PREV
+                </a>
+            ) : (
+                <span class="pagination-button is-disabled">← PREV</span>
+            )}
+
+            <ul class="pagination-pages">
+                {pageNumbers(lastPage).map((number) =>
+                    number === currentPage ? (
+                        <li>
+                            <span
+                                class="pagination-page is-current"
+                                aria-current="page"
+                            >
+                                {number}
+                            </span>
+                        </li>
+                    ) : (
+                        <li>
+                            <a
+                                class="pagination-page"
+                                href={pageHref(number, basePath)}
+                            >
+                                {number}
+                            </a>
+                        </li>
+                    ),
+                )}
+            </ul>
+
+            {currentPage < lastPage ? (
+                <a
+                    class="pagination-button"
+                    href={pageHref(currentPage + 1, basePath)}
+                >
+                    NEXT →
+                </a>
+            ) : (
+                <span class="pagination-button is-disabled">NEXT →</span>
+            )}
+        </nav>
+    )
+}

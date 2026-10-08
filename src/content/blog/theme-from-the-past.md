@@ -4,6 +4,8 @@ description: "Ever wished your fancy new WordPress blog looked like an old Geoci
 date: 2015-03-25
 order: 1
 category: retro
+image: ../../assets/images/cover-sunset.svg
+imageAlt: "Synthwave sunset over a neon wireframe grid"
 featured: true
 ---
 

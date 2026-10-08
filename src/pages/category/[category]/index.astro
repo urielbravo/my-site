@@ -1,0 +1,74 @@
+---
+import PostList from "../../../components/PostList.astro";
+import { site } from "../../../data/site.js";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import { splitIntoPages } from "../../../utils/pagination.js";
+import {
+    getSortedPosts,
+    postsInCategory,
+    slugify,
+    toCategories,
+    toRecentPosts,
+} from "../../../utils/posts.js";
+
+export async function getStaticPaths() {
+    const posts = await getSortedPosts();
+    const categories = new Set(posts.map((post) => post.data.category));
+    const recentPosts = toRecentPosts(posts);
+    const allCategories = toCategories(posts);
+
+    return [...categories].map((category) => {
+        const categoryPosts = postsInCategory(posts, category);
+        const pages = splitIntoPages(categoryPosts);
+
+        return {
+            params: { category: slugify(category) },
+            props: {
+                category,
+                posts: pages[0],
+                /** Whole-category total, so the heading doesn't shrink per page. */
+                total: categoryPosts.length,
+                currentPage: 1,
+                lastPage: pages.length,
+                recentPosts,
+                categories: allCategories,
+            },
+        };
+    });
+}
+
+const {
+    category,
+    posts,
+    total,
+    currentPage,
+    lastPage,
+    recentPosts,
+    categories,
+} = Astro.props;
+
+const basePath = `/category/${slugify(category)}/`;
+---
+
+<BlogLayout
+    title={`${category} · ${site.name}`}
+    recentPosts={recentPosts}
+    categories={categories}
+    activeCategory={category}
+>
+    <h2 class="category-heading">
+        🏷 <span>{category}</span>
+        <small>
+            {total}
+            {total === 1 ? "post" : "posts"}
+            {currentPage > 1 && ` · page ${currentPage}`}
+        </small>
+    </h2>
+
+    <PostList
+        posts={posts}
+        currentPage={currentPage}
+        lastPage={lastPage}
+        basePath={basePath}
+    />
+</BlogLayout>

@@ -1,0 +1,85 @@
+---
+import PostList from "../../../../components/PostList.astro";
+import { site } from "../../../../data/site.js";
+import BlogLayout from "../../../../layouts/BlogLayout.astro";
+import { splitIntoPages } from "../../../../utils/pagination.js";
+import {
+    getSortedPosts,
+    postsInCategory,
+    slugify,
+    toCategories,
+    toRecentPosts,
+} from "../../../../utils/posts.js";
+
+/**
+ * Pages 2+ of a category listing. Page 1 is served by
+ * ../[category]/index.astro, so every category starts from its second page.
+ */
+export async function getStaticPaths() {
+    const posts = await getSortedPosts();
+    const categories = new Set(posts.map((post) => post.data.category));
+    const recentPosts = toRecentPosts(posts);
+    const allCategories = toCategories(posts);
+    const routes = [];
+
+    for (const category of categories) {
+        const categoryPosts = postsInCategory(posts, category);
+        const pages = splitIntoPages(categoryPosts);
+
+        pages.slice(1).forEach((pagePosts, index) => {
+            routes.push({
+                params: {
+                    category: slugify(category),
+                    page: String(index + 2),
+                },
+                props: {
+                    category,
+                    posts: pagePosts,
+                    total: categoryPosts.length,
+                    currentPage: index + 2,
+                    lastPage: pages.length,
+                    recentPosts,
+                    categories: allCategories,
+                },
+            });
+        });
+    }
+
+    return routes;
+}
+
+const {
+    category,
+    posts,
+    total,
+    currentPage,
+    lastPage,
+    recentPosts,
+    categories,
+} = Astro.props;
+
+const basePath = `/category/${slugify(category)}/`;
+---
+
+<BlogLayout
+    title={`${category} · page ${currentPage} · ${site.name}`}
+    recentPosts={recentPosts}
+    categories={categories}
+    activeCategory={category}
+>
+    <h2 class="category-heading">
+        🏷 <span>{category}</span>
+        <small>
+            {total}
+            {total === 1 ? "post" : "posts"}
+            {currentPage > 1 && ` · page ${currentPage}`}
+        </small>
+    </h2>
+
+    <PostList
+        posts={posts}
+        currentPage={currentPage}
+        lastPage={lastPage}
+        basePath={basePath}
+    />
+</BlogLayout>

@@ -5,6 +5,8 @@ description: "This is an example of a WordPress post. You can add content, image
 date: 2015-03-25
 order: 4
 category: music
+image: ../../assets/images/cover-rings.svg
+imageAlt: "Concentric neon rings like a vinyl record"
 ---
 
 Praesent ultricies arcu scelerisque lacus bibendum sit amet lacinia sapien iaculis.

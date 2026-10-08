@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Pagination from "./Pagination.astro";
+import PostCard from "./PostCard.astro";
+import { postHref } from "../utils/posts.js";
+
+interface Props {
+    /** The posts belonging to this page. */
+    posts: CollectionEntry<"blog">[];
+    currentPage?: number;
+    lastPage?: number;
+    /** Where this listing lives, e.g. "/" or "/category/games/". */
+    basePath?: string;
+}
+
+const { posts, currentPage = 1, lastPage = 1, basePath = "/" } = Astro.props;
+---
+
+{
+    posts.map((post) => (
+        <PostCard
+            title={post.data.title}
+            date={post.data.date}
+            description={post.data.description}
+            href={postHref(post)}
+            featured={post.data.featured}
+        />
+    ))
+}
+
+<Pagination
+    currentPage={currentPage}
+    lastPage={lastPage}
+    basePath={basePath}
+/>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="A magenta and cyan checkerboard in a beveled window frame">
+    <defs>
+        <pattern id="check" width="56" height="56" patternUnits="userSpaceOnUse">
+            <rect width="56" height="56" fill="#ff00ff" />
+            <rect width="28" height="28" fill="#00ffff" />
+            <rect x="28" y="28" width="28" height="28" fill="#00ffff" />
+        </pattern>
+    </defs>
+
+    <rect width="800" height="450" fill="url(#check)" />
+
+    <rect x="6" y="6" width="788" height="438" fill="none" stroke="#ffff00" stroke-width="6" />
+    <rect x="170" y="160" width="460" height="130" fill="#1a0033" stroke="#00ff00" stroke-width="4" />
+
+    <g font-family="monospace" text-anchor="middle">
+        <text x="400" y="215" font-size="34" fill="#00ffff">UNDER CONSTRUCTION</text>
+        <text x="400" y="262" font-size="22" fill="#ffccff">sign my guestbook!</text>
+    </g>
+</svg>

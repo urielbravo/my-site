@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Concentric neon rings like a vinyl record">
+    <rect width="800" height="450" fill="#1a0033" />
+
+    <g fill="#00ffff" opacity="0.8">
+        <circle cx="80" cy="60" r="2" />
+        <circle cx="700" cy="50" r="3" />
+        <circle cx="640" cy="110" r="2" />
+        <circle cx="140" cy="380" r="2" />
+        <circle cx="660" cy="390" r="2" />
+        <circle cx="60" cy="200" r="3" />
+    </g>
+
+    <g fill="none" stroke-width="7">
+        <circle cx="400" cy="225" r="34" stroke="#ffff00" />
+        <circle cx="400" cy="225" r="70" stroke="#00ffff" />
+        <circle cx="400" cy="225" r="106" stroke="#ff00ff" />
+        <circle cx="400" cy="225" r="142" stroke="#00ff00" />
+        <circle cx="400" cy="225" r="178" stroke="#ff00ff" />
+    </g>
+
+    <circle cx="400" cy="225" r="205" fill="none" stroke="#00ffff" stroke-width="3" stroke-dasharray="12 10" />
+    <circle cx="400" cy="225" r="12" fill="#ffff00" />
+</svg>

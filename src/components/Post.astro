@@ -1,21 +1,58 @@
 ---
+import { Image } from "astro:assets";
 import { formatDate } from "../utils/date.js";
 import "./Post.css";
+
+interface Category {
+    name: string;
+    href: string;
+}
 
 interface Props {
     title: string;
     date: Date;
+    /** Cover art, centred under the title. */
+    image?: ImageMetadata;
+    imageAlt?: string;
+    /** Links back to each category listing this post belongs to. */
+    categories?: Category[];
     backHref?: string;
     backLabel?: string;
 }
 
-const { title, date, backHref = "/", backLabel = "← BACK TO THE INDEX" } =
-    Astro.props;
+const {
+    title,
+    date,
+    image,
+    imageAlt = "",
+    categories = [],
+    backHref = "/",
+    backLabel = "← BACK TO THE INDEX",
+} = Astro.props;
 ---
 
 <article class="post-page">
     <h1 class="post-page-title">{title}</h1>
+    {
+        image && (
+            <figure class="post-page-cover">
+                <Image src={image} alt={imageAlt} />
+            </figure>
+        )
+    }
     <div class="post-page-meta">Posted on {formatDate(date)}</div>
+    {
+        categories.length > 0 && (
+            <p class="post-page-categories">
+                <span class="post-page-categories-label">Filed under</span>
+                {categories.map((category) => (
+                    <a class="post-page-category" href={category.href}>
+                        {category.name}
+                    </a>
+                ))}
+            </p>
+        )
+    }
     <div class="post-page-body">
         <slot />
     </div>

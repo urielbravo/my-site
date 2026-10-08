@@ -1,0 +1,38 @@
+---
+import PostList from "../../components/PostList.astro";
+import { site } from "../../data/site.js";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import { splitIntoPages } from "../../utils/pagination.js";
+import {
+    getSortedPosts,
+    toCategories,
+    toRecentPosts,
+} from "../../utils/posts.js";
+
+/** Page 1 is rendered by src/pages/index.astro, so start from the second. */
+export async function getStaticPaths() {
+    const posts = await getSortedPosts();
+    const pages = splitIntoPages(posts);
+
+    return pages.slice(1).map((pagePosts, index) => ({
+        params: { page: String(index + 2) },
+        props: {
+            posts: pagePosts,
+            currentPage: index + 2,
+            lastPage: pages.length,
+            recentPosts: toRecentPosts(posts),
+            categories: toCategories(posts),
+        },
+    }));
+}
+
+const { posts, currentPage, lastPage, recentPosts, categories } = Astro.props;
+---
+
+<BlogLayout
+    title={`Page ${currentPage} · ${site.name}`}
+    recentPosts={recentPosts}
+    categories={categories}
+>
+    <PostList posts={posts} currentPage={currentPage} lastPage={lastPage} />
+</BlogLayout>
