@@ -6,9 +6,13 @@ import RetroFooter from "../../components/RetroFooter.astro";
 import RetroHeader from "../../components/RetroHeader.astro";
 import Sidebar from "../../components/Sidebar.astro";
 import SiteNav from "../../components/SiteNav.astro";
-import { blogroll, site } from "../../data/site.js";
+import { site } from "../../data/site.js";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getSortedPosts, toRecentPosts } from "../../utils/posts.js";
+import {
+    getSortedPosts,
+    toCategories,
+    toRecentPosts,
+} from "../../utils/posts.js";
 
 export async function getStaticPaths() {
     const posts = await getSortedPosts();
@@ -18,7 +22,9 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 
 const { Content } = await render(post);
-const recentPosts = toRecentPosts(await getSortedPosts());
+const allPosts = await getSortedPosts();
+const recentPosts = toRecentPosts(allPosts);
+const categories = toCategories(allPosts);
 ---
 
 <BaseLayout title={`${post.data.title} · ${site.name}`}>
@@ -35,7 +41,7 @@ const recentPosts = toRecentPosts(await getSortedPosts());
                 </Post>
             </div>
 
-            <Sidebar recentPosts={recentPosts} blogroll={blogroll} />
+            <Sidebar recentPosts={recentPosts} categories={categories} />
         </div>
 
         <RetroFooter />

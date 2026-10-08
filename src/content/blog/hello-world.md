@@ -3,6 +3,7 @@ title: "Hello World! Your New Blog Is Live"
 description: "A dummy post wired up with Astro content collections, so clicking Read More lands you on a real post page."
 date: 2015-03-24
 order: 7
+category: meta
 ---
 
 Welcome aboard! This is a **dummy post** wired up with Astro's content collections. If you clicked *Read More* on the last card back on the index, you're looking at a real page generated from the markdown file `src/content/blog/hello-world.md`.

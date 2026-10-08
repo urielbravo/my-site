@@ -1,12 +1,5 @@
 /** Static site copy. Posts live in src/content/blog as markdown. */
 
-/** @type {Array<{ title: string, href: string }>} */
-export const blogroll = [
-    { title: "Organic Themes", href: "#" },
-    { title: "WordPress.org", href: "#" },
-    { title: "Geocities Archive", href: "#" },
-];
-
 /** @type {Array<{ label: string, href: string }>} */
 export const navLinks = [
     { label: "🏠 HOME", href: "/" },
@@ -18,6 +11,8 @@ export const navLinks = [
 export const site = {
     name: "uriel's blog",
     title: "Retro Theme · a modern grid tribute",
+    bio: "Hey, I'm Uriel — the webmaster behind this site. These days I work as an automation engineer at a software company.",
+    profileAlt: "Portrait of Uriel",
     marquee:
         "★ WELCOME TO THE RETRO THEME ★ BEST VIEWED IN NETSCAPE NAVIGATOR ★ 800x600 ★ SIGN MY GUESTBOOK! ★",
 };

@@ -11,6 +11,28 @@
     gap: 1.5rem;
 }
 
+/* ---------- CATEGORY LISTING ---------- */
+.category-heading {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    font-family: "Press Start 2P", cursive;
+    font-size: 1.3rem;
+    color: #00ffff;
+    text-shadow: 2px 2px 0 #aa00aa;
+    text-transform: uppercase;
+    border-bottom: 4px dotted #ff00ff;
+    padding-bottom: 0.6rem;
+}
+
+.category-heading small {
+    font-family: "VT323", monospace;
+    font-size: 1.4rem;
+    color: #ffaa00;
+    text-shadow: none;
+}
+
 @media (max-width: 750px) {
     .content-grid {
         grid-template-columns: 1fr;

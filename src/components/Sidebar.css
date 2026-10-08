@@ -54,6 +54,56 @@
     background: #330066;
 }
 
+.widget a[aria-current="page"] {
+    color: #ffff00;
+    background: #330066;
+}
+
+/* ---------- CATEGORY GRID ---------- */
+/* Categories are stored lowercase ("video-games"); show them tidied up. */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: 0.6rem;
+}
+
+/* Drop the "►" marker and row layout the plain widget list uses. */
+.category-grid li {
+    display: block;
+    margin-bottom: 0;
+}
+
+.category-grid li::before {
+    content: none;
+}
+
+.category-chip {
+    display: block;
+    text-align: center;
+    background: #222;
+    border: 2px outset #ff00ff;
+    color: #00ff00;
+    font-family: "VT323", monospace;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-decoration: none;
+    text-shadow: 0 0 4px lime;
+    padding: 0.2rem 0.4rem;
+    box-shadow: 2px 2px 0 #330033;
+}
+
+.category-chip:hover {
+    color: #ffff00;
+    background: #330066;
+}
+
+.category-chip:active {
+    border-style: inset;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
 /* ---------- CALENDAR ---------- */
 .calendar-grid {
     display: grid;
@@ -82,20 +132,4 @@
     background: #ffff00;
     color: #000;
     animation: blink 0.8s infinite;
-}
-
-/* ---------- BACKGROUND MUSIC WIDGET ---------- */
-.widget-music-text {
-    font-size: 1.4rem;
-    color: #ff99ff;
-}
-
-.widget-controls {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 0.8rem;
-}
-
-.widget-controls button {
-    flex: 1;
 }

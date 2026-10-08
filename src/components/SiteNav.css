@@ -1,6 +1,6 @@
 /*
- * Reuses the old music player bar: same black panel, same magenta inset border,
- * same chunky retro buttons — now they navigate instead of playing a track.
+ * A black panel with a magenta inset border and chunky retro buttons, in the
+ * spirit of the old Winamp-era chrome this theme is paying tribute to.
  */
 .site-nav {
     background: #000;

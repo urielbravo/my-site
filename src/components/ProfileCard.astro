@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import profilePicture from "../assets/images/profile-picture.jpg";
+import { site } from "../data/site.js";
+import "./ProfileCard.css";
+---
+
+<div class="widget profile-card">
+    <Image
+        class="profile-photo"
+        src={profilePicture}
+        alt={site.profileAlt}
+        width={240}
+        densities={[1, 2]}
+    />
+    <p class="profile-bio">{site.bio}</p>
+</div>

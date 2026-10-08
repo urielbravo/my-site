@@ -10,6 +10,8 @@ const blog = defineCollection({
         date: z.coerce.date(),
         /** Listing order — the demo posts all share one date, so sort by hand. */
         order: z.number(),
+        /** Single category; drives the sidebar list and /category/<slug>/. */
+        category: z.string(),
         /** Gold double border on the card. */
         featured: z.boolean().default(false),
         /** Shorter label used in the "Recent Posts" sidebar list. */

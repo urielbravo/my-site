@@ -3,6 +3,7 @@ title: "A Theme From The Past"
 description: "Ever wished your fancy new WordPress blog looked like an old Geocities site from the Nineties? Probably not!"
 date: 2015-03-25
 order: 1
+category: retro
 featured: true
 ---
 
