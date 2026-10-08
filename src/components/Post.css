@@ -1,0 +1,192 @@
+/*
+ * Full post view. Class names are prefixed with "post-page" so they can't clash
+ * with the teaser card styles in PostCard.css (both stylesheets are global).
+ */
+.post-page {
+    background: #10001a;
+    border: 4px ridge #00ffff;
+    padding: 1.5rem 1.6rem 1.6rem;
+    box-shadow:
+        6px 6px 0 #ff00ff,
+        10px 10px 0 #330033;
+    /* Grid items default to min-width:auto, so long code lines would otherwise
+       stretch the whole page instead of wrapping or scrolling. */
+    min-width: 0;
+}
+
+.post-page-title {
+    font-family: "Press Start 2P", cursive;
+    font-size: 1.5rem;
+    color: #ffaa00;
+    line-height: 1.5;
+    text-shadow: 2px 2px 0 #aa00aa;
+    margin-bottom: 0.6rem;
+    word-break: break-word;
+}
+
+.post-page-meta {
+    font-size: 1.3rem;
+    color: #99ccff;
+    margin-bottom: 1.4rem;
+    border-left: 6px solid #00ff00;
+    padding-left: 0.6rem;
+    background: #1a1a2e;
+}
+
+/* ---------- RENDERED MARKDOWN ---------- */
+.post-page-body {
+    color: #b3ffb3;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 1.4rem;
+    /* Long paths and commands must break rather than push the layout sideways. */
+    overflow-wrap: anywhere;
+}
+
+.post-page-body > *:first-child {
+    margin-top: 0;
+}
+
+.post-page-body p {
+    margin-bottom: 0.9rem;
+}
+
+.post-page-body h2,
+.post-page-body h3,
+.post-page-body h4 {
+    font-family: "Press Start 2P", cursive;
+    color: #ffff00;
+    line-height: 1.5;
+    margin: 1.6rem 0 0.7rem;
+}
+
+.post-page-body h2 {
+    font-size: 1.1rem;
+    color: #00ffff;
+}
+
+.post-page-body h3 {
+    font-size: 1rem;
+    color: #ff99ff;
+}
+
+.post-page-body strong {
+    color: #ffffff;
+}
+
+.post-page-body a {
+    color: #ffff00;
+    background: #330066;
+    border-bottom: 3px outset #ff00ff;
+    padding: 0.1rem 0.5rem;
+    text-decoration: none;
+}
+
+.post-page-body a:hover {
+    background: #660099;
+}
+
+.post-page-body ul,
+.post-page-body ol {
+    margin: 0 0 0.9rem 1.8rem;
+}
+
+.post-page-body ul {
+    list-style: square;
+}
+
+.post-page-body li {
+    margin-bottom: 0.4rem;
+}
+
+.post-page-body li::marker {
+    color: #ffaa00;
+}
+
+.post-page-body blockquote {
+    border-left: 6px solid #ff00ff;
+    background: #220033;
+    color: #ffccff;
+    font-style: italic;
+    padding: 0.8rem 1rem;
+    margin: 0 0 1rem;
+}
+
+.post-page-body code {
+    font-family: monospace;
+    background: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 0 0.3rem;
+}
+
+.post-page-body pre {
+    background: #000;
+    border: 3px inset #ff00ff;
+    padding: 1rem;
+    margin: 0 0 1rem;
+    overflow-x: auto;
+    box-shadow: 4px 4px 0 #330033;
+}
+
+.post-page-body pre code {
+    border: 0;
+    padding: 0;
+    color: #b3ffb3;
+}
+
+.post-page-body hr {
+    border: 0;
+    border-top: 2px dashed #ff00ff;
+    margin: 1.6rem 0;
+}
+
+.post-page-body img {
+    max-width: 100%;
+    border: 4px ridge #00ffff;
+    box-shadow: 6px 6px 0 #ff00ff;
+}
+
+.post-page-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.post-page-body th,
+.post-page-body td {
+    border: 2px solid #00ffff;
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+}
+
+.post-page-body th {
+    background: #330033;
+    color: #00ffff;
+    font-family: "Press Start 2P", cursive;
+    font-size: 0.9rem;
+}
+
+/* ---------- BACK LINK ---------- */
+.post-page-back {
+    display: inline-block;
+    background: #330066;
+    color: #ffff00;
+    font-weight: bold;
+    padding: 0.2rem 1.2rem;
+    border: 3px outset #ff00ff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    box-shadow: 3px 3px 0 #ff00ff;
+}
+
+.post-page-back:hover {
+    background: #660099;
+}
+
+.post-page-back:active {
+    border-style: inset;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}

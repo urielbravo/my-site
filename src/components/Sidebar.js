@@ -48,10 +48,10 @@ days.forEach((day) => {
     });
 });
 
-// Sidebar links (recent posts, blogroll) are placeholders.
-const widgetLinks = document.querySelectorAll(".widget a");
+// Placeholder sidebar links (href="#") are demo links; real ones navigate.
+const placeholderLinks = document.querySelectorAll('.widget a[href="#"]');
 
-widgetLinks.forEach((link) => {
+placeholderLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
         event.preventDefault();
         alert(

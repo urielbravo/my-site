@@ -5,9 +5,12 @@ import Marquee from "../components/Marquee.astro";
 import PostCard from "../components/PostCard.astro";
 import Sidebar from "../components/Sidebar.astro";
 import SiteNav from "../components/SiteNav.astro";
-import { blogroll, posts, recentPosts, site } from "../data/site.js";
+import { blogroll, site } from "../data/site.js";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/layout.css";
+import { getSortedPosts, postHref, toRecentPosts } from "../utils/posts.js";
+
+const posts = await getSortedPosts();
+const recentPosts = toRecentPosts(posts);
 ---
 
 <BaseLayout title={site.title}>
@@ -19,7 +22,17 @@ import "../styles/layout.css";
 
         <div class="content-grid">
             <div class="posts">
-                {posts.map((post) => <PostCard {...post} />)}
+                {
+                    posts.map((post) => (
+                        <PostCard
+                            title={post.data.title}
+                            date={post.data.date}
+                            description={post.data.description}
+                            href={postHref(post)}
+                            featured={post.data.featured}
+                        />
+                    ))
+                }
             </div>
 
             <Sidebar recentPosts={recentPosts} blogroll={blogroll} />

@@ -1,0 +1,23 @@
+---
+import { formatDate } from "../utils/date.js";
+import "./Post.css";
+
+interface Props {
+    title: string;
+    date: Date;
+    backHref?: string;
+    backLabel?: string;
+}
+
+const { title, date, backHref = "/", backLabel = "← BACK TO THE INDEX" } =
+    Astro.props;
+---
+
+<article class="post-page">
+    <h1 class="post-page-title">{title}</h1>
+    <div class="post-page-meta">Posted on {formatDate(date)}</div>
+    <div class="post-page-body">
+        <slot />
+    </div>
+    <a class="post-page-back" href={backHref}>{backLabel}</a>
+</article>

@@ -1,8 +1,11 @@
 /* ---------- HEADER / TITLE BAR ---------- */
 .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     border-bottom: 4px dotted #00ffff;
-    padding-bottom: 0.8rem;
+    padding: 1rem 0;
     margin-bottom: 0.2rem;
     position: relative;
 }
@@ -43,30 +46,3 @@
     }
 }
 
-.header .tagline {
-    font-size: 1.8rem;
-    color: #ff99ff;
-    background: #330033;
-    display: inline-block;
-    padding: 0.2rem 1.5rem;
-    border-radius: 30px;
-    margin-top: 0.6rem;
-    border: 2px solid #00ff00;
-}
-
-.star-gif {
-    display: inline-block;
-    font-size: 2rem;
-    animation: spin 2s linear infinite;
-    margin: 0 0.5rem;
-    cursor: pointer;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
