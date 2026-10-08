@@ -103,7 +103,8 @@ body {
 .pagination-page,
 .category-chip,
 .about-video-link,
-.link-card {
+.link-card,
+.profile-link {
     transition:
         transform 0.08s ease,
         box-shadow 0.08s ease,
@@ -119,7 +120,8 @@ body {
 .pagination-page:not(.is-current):hover,
 .category-chip:hover,
 .about-video-link:hover,
-.link-card:hover {
+.link-card:hover,
+.profile-link:hover {
     transform: translateY(-3px);
     box-shadow:
         5px 7px 0 #ff00ff,
@@ -134,7 +136,8 @@ body {
 .pagination-page:not(.is-current):active,
 .category-chip:active,
 .about-video-link:active,
-.link-card:active {
+.link-card:active,
+.profile-link:active {
     transform: translateY(1px);
     border-style: inset;
     box-shadow: 1px 1px 0 #ff00ff;

@@ -1,5 +1,7 @@
 /** Static site copy. Posts live in src/content/blog as markdown. */
 
+import resumePdf from "../assets/resume.pdf";
+
 /** @type {Array<{ label: string, href: string }>} */
 export const navLinks = [
     { label: "🏠 HOME", href: "/" },
@@ -44,6 +46,29 @@ export const resourceLinks = [
         href: "https://www.happyhues.co/",
         description:
             "A place where you can pick a palette of colours for your site",
+    },
+];
+
+/**
+ * Elsewhere-on-the-web links for the profile card.
+ *
+ * @type {Array<{ icon: string, label: string, href: string }>}
+ */
+export const socialLinks = [
+    {
+        icon: "github",
+        label: "GitHub",
+        href: "https://github.com/urielbravo",
+    },
+    {
+        icon: "linkedin",
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/urielbravo/",
+    },
+    {
+        icon: "resume",
+        label: "Résumé (PDF)",
+        href: resumePdf,
     },
 ];
 

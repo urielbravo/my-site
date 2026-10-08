@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import profilePicture from "../assets/images/profile-picture.jpg";
-import { site } from "../data/site.js";
+import { site, socialLinks } from "../data/site.js";
+import Icon from "./Icon.astro";
 import "./ProfileCard.css";
 ---
 
@@ -13,5 +14,23 @@ import "./ProfileCard.css";
         width={240}
         densities={[1, 2]}
     />
+
+    <nav class="profile-links" aria-label="Elsewhere on the web">
+        {
+            socialLinks.map((link) => (
+                <a
+                    class="profile-link"
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.label}
+                    title={link.label}
+                >
+                    <Icon name={link.icon as "github" | "linkedin" | "resume"} />
+                </a>
+            ))
+        }
+    </nav>
+
     <p class="profile-bio">{site.bio}</p>
 </div>

@@ -7,11 +7,43 @@
     width: 100%;
     max-width: 240px;
     height: auto;
-    margin: 0 auto 1.1rem;
+    margin: 0 auto 1rem;
     /* A softer edge than the rest of the theme's hard bevels. */
     border-radius: 10px;
     border: 3px solid #00ffff;
     box-shadow: 4px 4px 0 #ff00ff;
+}
+
+/* ---------- SOCIAL LINKS ---------- */
+.profile-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Scoped to .profile-card so these override `.widget a`, which would
+   otherwise force its teal text colour and dashed underline onto them. */
+.profile-card .profile-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #222;
+    border: 2px outset #ff00ff;
+    border-bottom: 2px outset #ff00ff;
+    color: #00ff00;
+    box-shadow: 2px 2px 0 #330033;
+}
+
+.profile-card .profile-link:hover {
+    color: #ffff00;
+    background: #330066;
+}
+
+.profile-link .icon {
+    display: block;
 }
 
 .profile-bio {
