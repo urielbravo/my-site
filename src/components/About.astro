@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import aboutMe from "../assets/images/me_2.jpg";
+import kito1 from "../assets/images/kito_1.jpeg";
+import kito2 from "../assets/images/kito_2.jpeg";
+import kito3 from "../assets/images/kito_3.jpeg";
+import "./About.css";
+
+/** One episode of the channel, embedded below. */
+const videoId = "fdyfWpSErc8";
+
+const favoriteFoods = ["Tacos", "Pizza", "Hamburger", "Burros"];
+---
+
+<div class="about">
+    <section class="about-card">
+        <h2 class="about-title">About Me</h2>
+        <div class="about-intro">
+            <div class="about-prose">
+                <p>
+                    My name is Uriel and I'm a webmaster living in Mexico.
+                </p>
+                <p>
+                    I like scary stuff and coding. As you can also see, I'm a
+                    big fan of old-school 90s web — this site is an homage to
+                    all of that.
+                </p>
+            </div>
+            <Image
+                class="about-photo about-photo--profile"
+                src={aboutMe}
+                alt="Uriel sitting against a white wall, looking down at his phone"
+                widths={[240, 320, 480]}
+                sizes="(max-width: 750px) 80vw, 260px"
+            />
+        </div>
+    </section>
+
+    <section class="about-card">
+        <h2 class="about-title">🐕 My Dog, Kito</h2>
+        <p>
+            I have a dog. His name is Kito, and he's a good friend. Sometimes
+            we like to go for a run, but he gets tired very easily, so I let
+            him rest once in a while.
+        </p>
+
+        <div class="kito-gallery">
+            <figure class="about-figure about-figure--portrait">
+                <Image
+                    src={kito1}
+                    alt="Kito wearing a red glittery reindeer Christmas outfit"
+                    widths={[280, 420, 560]}
+                    sizes="(max-width: 750px) 90vw, 30vw"
+                />
+                <figcaption>Kito in his Christmas suit</figcaption>
+            </figure>
+
+            <figure class="about-figure">
+                <Image
+                    src={kito2}
+                    alt="Kito lying flat on the pavement, panting after a run"
+                    widths={[420, 640, 900]}
+                    sizes="(max-width: 750px) 90vw, 55vw"
+                />
+                <figcaption>Kito, tired</figcaption>
+            </figure>
+
+            <figure class="about-figure about-figure--wide">
+                <Image
+                    src={kito3}
+                    alt="Kito lying on his back on the pavement with his tongue out"
+                    widths={[420, 640, 900]}
+                    sizes="(max-width: 750px) 90vw, 55vw"
+                />
+                <figcaption>Kito, ded xD</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="about-card">
+        <h2 class="about-title">🍕 My Favorite Foods</h2>
+        <ul class="about-foods">
+            {favoriteFoods.map((food) => <li>{food}</li>)}
+        </ul>
+        <p class="about-aside">
+            I once went to a Chinese restaurant because I was feeling a little
+            adventurous. I ordered the chicken — it was raw. Never again.
+        </p>
+    </section>
+
+    <section class="about-card">
+        <h2 class="about-title">📺 My YouTube Channel</h2>
+        <p>
+            I have a YouTube channel called <strong>Cuentos de la noche</strong>
+            (tales of the night). Basically I tell scary stories, but I pile on
+            effects and sounds to make them scarier and more immersive. You can
+            check it out — it's in Spanish, though. Here's one episode:
+        </p>
+
+        <div class="about-video">
+            <iframe
+                src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                title="An episode of Cuentos de la noche"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <a
+            class="about-video-link"
+            href={`https://www.youtube.com/watch?v=${videoId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ▶ WATCH ON YOUTUBE
+        </a>
+    </section>
+</div>

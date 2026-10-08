@@ -3,7 +3,7 @@
 /** @type {Array<{ label: string, href: string }>} */
 export const navLinks = [
     { label: "🏠 HOME", href: "/" },
-    { label: "★ ABOUT", href: "#about" },
+    { label: "★ ABOUT", href: "/about/" },
     { label: "★ PROJECTS", href: "#projects" },
     { label: "★ LINKS", href: "#links" },
 ];
