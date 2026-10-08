@@ -19,8 +19,6 @@ const blog = defineCollection({
             image: image(),
             /** Required for accessibility; describe what is in the picture. */
             imageAlt: z.string(),
-            /** Gold double border on the card. */
-            featured: z.boolean().default(false),
             /** Shorter label used in the "Recent Posts" sidebar list. */
             shortTitle: z.string().optional(),
             /** Hidden from listings and gets no page of its own. */

@@ -23,7 +23,6 @@ const { posts, currentPage = 1, lastPage = 1, basePath = "/" } = Astro.props;
             date={post.data.date}
             description={post.data.description}
             href={postHref(post)}
-            featured={post.data.featured}
         />
     ))
 }

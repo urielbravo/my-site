@@ -15,6 +15,7 @@
     list-style: none;
 }
 
+/* Hover/press behaviour is shared — see "BEVELLED BUTTONS" in global.css. */
 .pagination-button,
 .pagination-page {
     display: inline-block;
@@ -30,17 +31,10 @@
     box-shadow: 2px 2px 0 #330033;
 }
 
-.pagination-button:hover,
-.pagination-page:hover {
+.pagination-button:not(.is-disabled):hover,
+.pagination-page:not(.is-current):hover {
     color: #ffff00;
     background: #330066;
-}
-
-.pagination-button:active,
-.pagination-page:active {
-    border-style: inset;
-    transform: translate(2px, 2px);
-    box-shadow: none;
 }
 
 .pagination-button.is-disabled {

@@ -77,6 +77,7 @@
     content: none;
 }
 
+/* Hover/press behaviour is shared — see "BEVELLED BUTTONS" in global.css. */
 .category-chip {
     display: block;
     text-align: center;
@@ -96,12 +97,6 @@
 .category-chip:hover {
     color: #ffff00;
     background: #330066;
-}
-
-.category-chip:active {
-    border-style: inset;
-    transform: translate(2px, 2px);
-    box-shadow: none;
 }
 
 /* ---------- CALENDAR ---------- */

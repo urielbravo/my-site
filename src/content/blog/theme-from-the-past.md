@@ -6,7 +6,6 @@ order: 1
 category: retro
 image: ../../assets/images/cover-sunset.svg
 imageAlt: "Synthwave sunset over a neon wireframe grid"
-featured: true
 ---
 
 Nevertheless, that’s what you get with the Retro Theme from Organic Themes. The theme features the latest in web technology — background music, animated gifs, blinding colors, etc. In fact, we’re pretty sure if you traveled back in time using a Delorean with a Flux Capacitor and brought this website to the people of the past, you would no doubt be the new Mayor of Hill Valley.

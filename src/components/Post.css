@@ -86,12 +86,6 @@
     background: #330066;
 }
 
-.post-page-category:active {
-    border-style: inset;
-    transform: translate(2px, 2px);
-    box-shadow: none;
-}
-
 /* ---------- RENDERED MARKDOWN ---------- */
 .post-page-body {
     color: #b3ffb3;
@@ -227,6 +221,7 @@
 }
 
 /* ---------- BACK LINK ---------- */
+/* Hover/press behaviour is shared — see "BEVELLED BUTTONS" in global.css. */
 .post-page-back {
     display: inline-block;
     background: #330066;
@@ -242,10 +237,4 @@
 
 .post-page-back:hover {
     background: #660099;
-}
-
-.post-page-back:active {
-    border-style: inset;
-    transform: translate(2px, 2px);
-    box-shadow: none;
 }

@@ -7,13 +7,12 @@ interface Props {
     date: Date;
     description: string;
     href: string;
-    featured?: boolean;
 }
 
-const { title, date, description, href, featured = false } = Astro.props;
+const { title, date, description, href } = Astro.props;
 ---
 
-<article class:list={["post-card", { "featured-post": featured }]}>
+<article class="post-card">
     <h2 class="post-title">{title}</h2>
     <div class="post-meta">Posted on {formatDate(date)}</div>
     <div class="post-content">

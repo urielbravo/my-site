@@ -18,6 +18,7 @@
     list-style: none;
 }
 
+/* Hover/press behaviour is shared — see "BEVELLED BUTTONS" in global.css. */
 .nav-button {
     display: inline-block;
     background: #222;
@@ -31,18 +32,11 @@
     letter-spacing: 2px;
     text-shadow: 0 0 4px lime;
     box-shadow: 2px 2px 0 #330033;
-    transition: 0.05s linear;
 }
 
 .nav-button:hover {
     color: #ffff00;
     background: #330066;
-}
-
-.nav-button:active {
-    border-style: inset;
-    transform: translate(2px, 2px);
-    box-shadow: none;
 }
 
 /* ---------- HAMBURGER (small screens only) ---------- */
@@ -69,11 +63,6 @@
 
     .nav-toggle:hover {
         background: #ff99ff;
-    }
-
-    .nav-toggle:focus-visible {
-        outline: 2px dashed #ffff00;
-        outline-offset: 2px;
     }
 
     .nav-toggle-icon {

@@ -34,6 +34,64 @@ body {
 }
 
 /* ---------- SHARED UTILITIES ---------- */
+/*
+ * One dashed ring for every focusable thing, so keyboard focus is never
+ * mistaken for one of the theme's coloured borders.
+ */
+:focus-visible {
+    outline: 2px dashed #ffff00;
+    outline-offset: 2px;
+}
+
+/* ---------- BEVELLED BUTTONS ---------- */
+/*
+ * Every chunky retro control shares one interaction so they all read as
+ * physical buttons: lift on hover, press in on click. Hover and active live
+ * in the same block because splitting them across component stylesheets makes
+ * the winner depend on stylesheet order, and a press can lose to a hover.
+ *
+ * `.is-disabled` and `.is-current` are spans, not links, so they are excluded —
+ * they must not appear to be pressable.
+ */
+.read-more,
+.post-page-back,
+.post-page-category,
+.nav-button,
+.pagination-button,
+.pagination-page,
+.category-chip {
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.08s ease,
+        background-color 0.08s ease,
+        color 0.08s ease;
+}
+
+.read-more:hover,
+.post-page-back:hover,
+.post-page-category:hover,
+.nav-button:hover,
+.pagination-button:not(.is-disabled):hover,
+.pagination-page:not(.is-current):hover,
+.category-chip:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        5px 7px 0 #ff00ff,
+        0 0 10px #ff00ff;
+}
+
+.read-more:active,
+.post-page-back:active,
+.post-page-category:active,
+.nav-button:active,
+.pagination-button:not(.is-disabled):active,
+.pagination-page:not(.is-current):active,
+.category-chip:active {
+    transform: translateY(1px);
+    border-style: inset;
+    box-shadow: 1px 1px 0 #ff00ff;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;

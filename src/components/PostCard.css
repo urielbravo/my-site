@@ -54,17 +54,11 @@
     text-decoration: none;
     font-size: 1.4rem;
     letter-spacing: 2px;
-    transition: 0.05s;
     box-shadow: 3px 3px 0 #ff00ff;
 }
 
-.read-more:active {
-    border-style: inset;
-    transform: translate(2px, 2px);
-    box-shadow: none;
-}
-
-.featured-post {
-    border: 6px double #ffcc00;
-    background: #220033;
+/* Hover/press behaviour is shared — see "BEVELLED BUTTONS" in global.css. */
+.read-more:hover {
+    background: #660099;
+    color: #ffffff;
 }
