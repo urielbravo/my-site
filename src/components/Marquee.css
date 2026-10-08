@@ -1,32 +1,68 @@
+/* ---------- BUTTON CAROUSEL ---------- */
+/*
+ * The bar stays put and only the track moves. Animating the bar itself is what
+ * used to slide the whole element outside the retro wrapper, which overflow
+ * can't clip.
+ */
 .marquee-text {
     overflow: hidden;
-    white-space: nowrap;
     border-top: 2px dashed #ff00ff;
     border-bottom: 2px dashed #ff00ff;
-    padding: 0.4rem 0;
-    color: #ffff00;
-    font-size: 1.6rem;
-    letter-spacing: 2px;
-    cursor: pointer;
+    padding: 0.6rem 0;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 14s linear infinite;
+}
+
+.marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    /* The trailing pad keeps the spacing even across the seam between groups. */
+    padding-right: 0.6rem;
+}
+
+.marquee-button {
+    display: block;
+    flex: 0 0 auto;
+    line-height: 0;
+}
+
+.marquee-button img {
+    display: block;
+    max-width: 100%;
 }
 
 /*
- * The track slides, the bar stays put. Animating the bar itself would move the
- * whole element outside the retro wrapper, which overflow can't clip.
- * `padding-left: 100%` starts the text just past the right edge so it scrolls
- * in from off-screen.
+ * The track holds two identical groups, so -50% is exactly one group's width
+ * and copy #2 lands precisely where copy #1 started. No visible seam.
  */
-.marquee-track {
-    display: inline-block;
-    padding-left: 100%;
-    animation: scroll-left 12s linear infinite;
-}
-
-@keyframes scroll-left {
+@keyframes marquee-scroll {
     from {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
+    }
+}
+
+/* Hold still on hover so a button can actually be caught and clicked. */
+.marquee-text:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* No auto-moving content for anyone who asked for less of it. */
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+
+    /* With the animation off the track is wider than the bar, so let it be
+       scrolled instead of clipped out of reach. */
+    .marquee-text {
+        overflow-x: auto;
     }
 }
