@@ -100,20 +100,67 @@
 }
 
 /* ---------- CALENDAR ---------- */
+.calendar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.calendar-nav,
+.calendar-month {
+    font-family: "VT323", monospace;
+    background: #222;
+    border: 2px outset #ff00ff;
+    color: #00ff00;
+    cursor: pointer;
+}
+
+.calendar-nav {
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0.25rem 0.7rem;
+}
+
+.calendar-month {
+    flex: 1;
+    font-family: "Press Start 2P", cursive;
+    font-size: 0.8rem;
+    color: #00ffff;
+    text-align: center;
+    padding: 0.35rem 0.3rem;
+}
+
+.calendar-nav:hover,
+.calendar-month:hover {
+    color: #ffff00;
+    background: #330066;
+}
+
+.calendar-nav:active,
+.calendar-month:active {
+    border-style: inset;
+}
+
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 3px;
     text-align: center;
     font-size: 1.1rem;
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
 }
 
-.calendar-grid span {
+.calendar-grid .day {
     background: #000;
     padding: 0.2rem 0;
     border: 1px solid #00ff00;
     cursor: pointer;
+}
+
+.calendar-grid .day:hover {
+    background: #330066;
+    color: #ffff00;
 }
 
 .calendar-grid .day-name {
@@ -123,8 +170,21 @@
     cursor: default;
 }
 
-.calendar-grid .today {
+/* Leading padding slots: they align the grid but must not look like dates. */
+.calendar-grid .is-blank {
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: default;
+}
+
+.calendar-grid .is-today {
     background: #ffff00;
     color: #000;
     animation: blink 0.8s infinite;
+}
+
+.calendar-grid .is-selected {
+    background: #00ffff;
+    color: #000;
+    animation: none;
 }

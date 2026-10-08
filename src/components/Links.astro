@@ -1,0 +1,39 @@
+---
+import { resourceLinks } from "../data/site.js";
+import "./Links.css";
+---
+
+<div class="links">
+    <section class="panel">
+        <h2 class="panel-title">Useful Links</h2>
+        <p>
+            Here are some links that I've found useful or amusing.
+        </p>
+    </section>
+
+    <section class="panel">
+        <h2 class="panel-title">
+            Resources so you can also create your own website
+        </h2>
+
+        <ul class="link-grid">
+            {
+                resourceLinks.map((link) => (
+                    <li>
+                        <a
+                            class="link-card"
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="link-card-title">{link.title}</span>
+                            <span class="link-card-description">
+                                {link.description}
+                            </span>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+</div>

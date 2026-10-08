@@ -43,6 +43,48 @@ body {
     outline-offset: 2px;
 }
 
+/* ---------- PANELS ---------- */
+/*
+ * Card chrome shared by the static content pages (About, Links), so a third
+ * page doesn't quietly grow its own copy of these numbers.
+ */
+.panel {
+    background: #10001a;
+    border: 4px ridge #00ffff;
+    padding: 1.4rem 1.6rem 1.6rem;
+    box-shadow:
+        6px 6px 0 #ff00ff,
+        10px 10px 0 #330033;
+    min-width: 0;
+}
+
+.panel-title {
+    font-family: "Press Start 2P", cursive;
+    font-size: 1.1rem;
+    color: #00ffff;
+    line-height: 1.5;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #aa00aa;
+    border-bottom: 3px dotted #ff00ff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.panel p {
+    color: #b3ffb3;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 0.9rem;
+}
+
+.panel p:last-child {
+    margin-bottom: 0;
+}
+
+.panel strong {
+    color: #ffffff;
+}
+
 /* ---------- BEVELLED BUTTONS ---------- */
 /*
  * Every chunky retro control shares one interaction so they all read as
@@ -60,7 +102,8 @@ body {
 .pagination-button,
 .pagination-page,
 .category-chip,
-.about-video-link {
+.about-video-link,
+.link-card {
     transition:
         transform 0.08s ease,
         box-shadow 0.08s ease,
@@ -75,7 +118,8 @@ body {
 .pagination-button:not(.is-disabled):hover,
 .pagination-page:not(.is-current):hover,
 .category-chip:hover,
-.about-video-link:hover {
+.about-video-link:hover,
+.link-card:hover {
     transform: translateY(-3px);
     box-shadow:
         5px 7px 0 #ff00ff,
@@ -89,7 +133,8 @@ body {
 .pagination-button:not(.is-disabled):active,
 .pagination-page:not(.is-current):active,
 .category-chip:active,
-.about-video-link:active {
+.about-video-link:active,
+.link-card:active {
     transform: translateY(1px);
     border-style: inset;
     box-shadow: 1px 1px 0 #ff00ff;

@@ -1,0 +1,67 @@
+.links {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* ---------- LINK GRID ---------- */
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1rem;
+    list-style: none;
+}
+
+.link-card {
+    display: block;
+    height: 100%;
+    background: #222;
+    border: 3px outset #ff00ff;
+    padding: 0.9rem 1rem 1rem;
+    text-decoration: none;
+    box-shadow: 2px 2px 0 #330033;
+}
+
+.link-card-title {
+    display: block;
+    font-family: "Press Start 2P", cursive;
+    font-size: 0.9rem;
+    color: #00ff00;
+    text-shadow: 0 0 4px lime;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    /* Long domains shouldn't wrap mid-word into the shadow. */
+    overflow-wrap: anywhere;
+}
+
+.link-card-description {
+    display: block;
+    font-family: "VT323", monospace;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: #b3ffb3;
+}
+
+.link-card:hover {
+    background: #330066;
+}
+
+.link-card:hover .link-card-title {
+    color: #ffff00;
+}
+
+/* A marker so it's obvious these leave the site. */
+.link-card-title::after {
+    content: " ↗";
+    color: #ff00ff;
+}
+
+.link-card:hover .link-card-title::after {
+    color: #ffff00;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 750px) {
+    .link-grid {
+        grid-template-columns: 1fr;
+    }
+}

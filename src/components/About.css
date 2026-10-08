@@ -1,45 +1,8 @@
 /* ---------- ABOUT PAGE ---------- */
+/* Panel chrome and prose styling are shared — see "PANELS" in global.css. */
 .about {
     display: grid;
     gap: 1.5rem;
-}
-
-/* Same panel chrome as a post, so the two page types feel like one site. */
-.about-card {
-    background: #10001a;
-    border: 4px ridge #00ffff;
-    padding: 1.4rem 1.6rem 1.6rem;
-    box-shadow:
-        6px 6px 0 #ff00ff,
-        10px 10px 0 #330033;
-    min-width: 0;
-}
-
-.about-title {
-    font-family: "Press Start 2P", cursive;
-    font-size: 1.1rem;
-    color: #00ffff;
-    line-height: 1.5;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 0 #aa00aa;
-    border-bottom: 3px dotted #ff00ff;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.about-card p {
-    color: #b3ffb3;
-    font-size: 1.4rem;
-    line-height: 1.5;
-    margin-bottom: 0.9rem;
-}
-
-.about-card p:last-child {
-    margin-bottom: 0;
-}
-
-.about-card strong {
-    color: #ffffff;
 }
 
 .about-aside {

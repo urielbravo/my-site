@@ -1,6 +1,7 @@
 ---
 import ProfileCard from "./ProfileCard.astro";
 import "./Sidebar.css";
+import { WEEKDAY_INITIALS, buildMonthCells, monthLabel } from "../utils/calendar.js";
 
 interface Link {
     title: string;
@@ -21,12 +22,10 @@ interface Props {
 
 const { recentPosts, categories, activeCategory } = Astro.props;
 
-const dayNames = ["S", "M", "T", "W", "T", "F", "S"];
-const days = Array.from({ length: 31 }, (_, index) => index + 1);
-/** The demo "today": March 25, 2015. */
-const today = 25;
-/** Keeps the last row of the grid filled, like a real month view. */
-const trailingBlanks = 3;
+/** Rendered at build time; Sidebar.js re-renders if the build has gone stale. */
+const buildDate = new Date();
+const calendarCells = buildMonthCells(buildDate);
+const calendarLabel = monthLabel(buildDate);
 ---
 
 <aside class="sidebar">
@@ -45,16 +44,56 @@ const trailingBlanks = 3;
         </ul>
     </div>
 
-    <div class="widget">
+    <div class="widget" data-calendar>
         <h3>📅 Calendar</h3>
-        <div class="calendar-grid">
-            {dayNames.map((name) => <span class="day-name">{name}</span>)}
+
+        <div class="calendar-head">
+            <button
+                type="button"
+                class="calendar-nav"
+                data-calendar-prev
+                aria-label="Previous month"
+            >
+                ◀
+            </button>
+            <button
+                type="button"
+                class="calendar-month"
+                data-calendar-label
+                title="Back to the current month"
+            >
+                {calendarLabel}
+            </button>
+            <button
+                type="button"
+                class="calendar-nav"
+                data-calendar-next
+                aria-label="Next month"
+            >
+                ▶
+            </button>
+        </div>
+
+        <div class="calendar-grid" data-calendar-grid>
             {
-                days.map((day) => (
-                    <span class:list={{ today: day === today }}>{day}</span>
+                WEEKDAY_INITIALS.map((initial) => (
+                    <span class="day-name">{initial}</span>
                 ))
             }
-            {Array.from({ length: trailingBlanks }).map(() => <span></span>)}
+            {
+                calendarCells.map((day) =>
+                    day === null ? (
+                        <span class="is-blank"></span>
+                    ) : (
+                        <span
+                            class:list={["day", { "is-today": day === buildDate.getDate() }]}
+                            data-day={day}
+                        >
+                            {day}
+                        </span>
+                    ),
+                )
+            }
         </div>
     </div>
 
