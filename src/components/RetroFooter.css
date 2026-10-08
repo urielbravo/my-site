@@ -1,0 +1,37 @@
+/* ---------- FOOTER ---------- */
+.footer {
+    text-align: center;
+    border-top: 6px double #ff00ff;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    color: #99ff99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer .under-construction {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.8rem;
+    color: #ffff00;
+}
+
+.footer .under-construction span {
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-6px);
+    }
+}
+
+.footer-guestbook {
+    font-size: 1.2rem;
+    color: #ffaa00;
+}

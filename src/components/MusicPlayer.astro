@@ -1,0 +1,21 @@
+---
+import { mainTrackLabel } from "../scripts/player.js";
+import "./MusicPlayer.css";
+---
+
+<div class="music-player">
+    <div class="track-info">
+        <span>♫ NOW PLAYING:</span>
+        <span class="blink">▶</span>
+        <span data-track-label>{mainTrackLabel()}</span>
+    </div>
+    <div class="controls">
+        <button type="button" data-action="play">▶ PLAY</button>
+        <button type="button" data-action="pause">⏸ PAUSE</button>
+        <button type="button" data-action="stop">⏹ STOP</button>
+    </div>
+</div>
+
+<script>
+    import "./MusicPlayer.js";
+</script>

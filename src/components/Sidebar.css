@@ -1,0 +1,101 @@
+/* ---------- SIDEBAR WIDGETS ---------- */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.widget {
+    background: #1a0033;
+    border: 5px ridge #ff00ff;
+    padding: 1rem 1rem 1.2rem;
+    box-shadow:
+        4px 4px 0 #00ffff,
+        8px 8px 0 #330033;
+}
+
+.widget h3 {
+    font-family: "Press Start 2P", cursive;
+    font-size: 1rem;
+    color: #00ffff;
+    margin-bottom: 0.8rem;
+    border-bottom: 3px dotted #ff00ff;
+    padding-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget li {
+    margin-bottom: 0.6rem;
+    font-size: 1.4rem;
+    color: #ffccff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.widget li::before {
+    content: "►";
+    color: #ffaa00;
+    font-size: 1.2rem;
+}
+
+.widget a {
+    color: #00ffaa;
+    text-decoration: none;
+    border-bottom: 1px dashed #ff00ff;
+}
+
+.widget a:hover {
+    color: #ffff00;
+    background: #330066;
+}
+
+/* ---------- CALENDAR ---------- */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.calendar-grid span {
+    background: #000;
+    padding: 0.2rem 0;
+    border: 1px solid #00ff00;
+    cursor: pointer;
+}
+
+.calendar-grid .day-name {
+    background: #ff00ff;
+    color: #000;
+    font-weight: bold;
+    cursor: default;
+}
+
+.calendar-grid .today {
+    background: #ffff00;
+    color: #000;
+    animation: blink 0.8s infinite;
+}
+
+/* ---------- BACKGROUND MUSIC WIDGET ---------- */
+.widget-music-text {
+    font-size: 1.4rem;
+    color: #ff99ff;
+}
+
+.widget-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.widget-controls button {
+    flex: 1;
+}

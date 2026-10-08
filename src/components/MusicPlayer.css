@@ -1,0 +1,49 @@
+/* ---------- MUSIC PLAYER ---------- */
+.music-player {
+    background: #000;
+    border: 3px inset #ff00ff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.track-info span {
+    color: #00ffff;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px cyan;
+}
+
+.controls {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.controls button {
+    background: #222;
+    border: 3px outset #ff00ff;
+    color: #00ff00;
+    font-family: "VT323", monospace;
+    font-size: 1.4rem;
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+    transition: 0.05s linear;
+    text-shadow: 0 0 4px lime;
+    box-shadow: 2px 2px 0 #330033;
+}
+
+.controls button:active {
+    border-style: inset;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}

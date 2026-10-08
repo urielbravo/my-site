@@ -1,0 +1,70 @@
+/* ---------- POST CARD ---------- */
+.post-card {
+    background: #10001a;
+    border: 4px ridge #00ffff;
+    padding: 1rem 1.2rem;
+    box-shadow:
+        6px 6px 0 #ff00ff,
+        10px 10px 0 #330033;
+    transition: 0.1s;
+}
+
+.post-card:hover {
+    box-shadow:
+        6px 6px 0 #ffff00,
+        10px 10px 0 #ff00ff;
+    border-color: #ff00ff;
+}
+
+.post-title {
+    font-family: "Press Start 2P", cursive;
+    font-size: 1.2rem;
+    color: #ffaa00;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+    text-shadow: 2px 2px 0 #aa00aa;
+}
+
+.post-meta {
+    font-size: 1.3rem;
+    color: #99ccff;
+    margin-bottom: 0.8rem;
+    border-left: 6px solid #00ff00;
+    padding-left: 0.6rem;
+    background: #1a1a2e;
+}
+
+.post-content {
+    color: #b3ffb3;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.post-content p {
+    margin-bottom: 0.8rem;
+}
+
+.read-more {
+    display: inline-block;
+    background: #330066;
+    color: #ffff00;
+    font-weight: bold;
+    padding: 0.2rem 1.2rem;
+    border: 3px outset #ff00ff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    transition: 0.05s;
+    box-shadow: 3px 3px 0 #ff00ff;
+}
+
+.read-more:active {
+    border-style: inset;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.featured-post {
+    border: 6px double #ffcc00;
+    background: #220033;
+}

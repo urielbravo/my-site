@@ -1,0 +1,72 @@
+/* ---------- HEADER / TITLE BAR ---------- */
+.header {
+    text-align: center;
+    border-bottom: 4px dotted #00ffff;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.2rem;
+    position: relative;
+}
+
+.header h1 {
+    font-family: "Press Start 2P", cursive;
+    font-size: 2.2rem;
+    color: #ffff00;
+    text-shadow:
+        4px 4px 0 #ff0000,
+        8px 8px 0 #00ffff;
+    letter-spacing: 4px;
+    word-break: break-word;
+    animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    92% {
+        opacity: 1;
+    }
+    93% {
+        opacity: 0.7;
+    }
+    94% {
+        opacity: 1;
+    }
+    96% {
+        opacity: 0.4;
+    }
+    97% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.header .tagline {
+    font-size: 1.8rem;
+    color: #ff99ff;
+    background: #330033;
+    display: inline-block;
+    padding: 0.2rem 1.5rem;
+    border-radius: 30px;
+    margin-top: 0.6rem;
+    border: 2px solid #00ff00;
+}
+
+.star-gif {
+    display: inline-block;
+    font-size: 2rem;
+    animation: spin 2s linear infinite;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

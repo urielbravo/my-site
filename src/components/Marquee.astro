@@ -1,0 +1,17 @@
+---
+import "./Marquee.css";
+
+interface Props {
+    message: string;
+}
+
+const { message } = Astro.props;
+---
+
+<div class="marquee-text">
+    <span class="marquee-track">{message}</span>
+</div>
+
+<script>
+    import "./Marquee.js";
+</script>
