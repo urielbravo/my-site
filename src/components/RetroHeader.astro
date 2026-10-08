@@ -1,8 +1,26 @@
 ---
+import ratSunglasses from "../assets/images/rat_sunglasses.gif?url";
 import { site } from "../data/site.js";
 import "./RetroHeader.css";
 ---
 
 <header class="header">
-    <h1>★ {site.name} ★</h1>
+    <h1>
+        <!-- Decorative: the heading text carries the meaning, so empty alt. -->
+        <img
+            class="header-rat"
+            src={ratSunglasses}
+            alt=""
+            width="80"
+            height="80"
+        />
+        {site.name}
+        <img
+            class="header-rat"
+            src={ratSunglasses}
+            alt=""
+            width="80"
+            height="80"
+        />
+    </h1>
 </header>

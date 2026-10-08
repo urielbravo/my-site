@@ -22,6 +22,39 @@
     animation: flicker 3s infinite;
 }
 
+/* ---------- SPINNING RATS ---------- */
+/*
+ * Sized in `em` so the rats scale with the heading, including the smaller
+ * mobile font size. `inline-block` is required for transform to apply, and the
+ * asset is an animated GIF so it has to stay a plain <img> — sharp would
+ * flatten it to a single frame.
+ */
+.header-rat {
+    display: inline-block;
+    width: 1.4em;
+    height: auto;
+    /* Nudges the rats away from the title on both sides. */
+    margin: 0 0.3em;
+    vertical-align: -0.18em;
+    animation: rat-spin 3s linear infinite;
+}
+
+@keyframes rat-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header-rat,
+    .header h1 {
+        animation: none;
+    }
+}
+
 @keyframes flicker {
     0% {
         opacity: 1;
