@@ -2,9 +2,9 @@
 import RetroFooter from "../components/RetroFooter.astro";
 import RetroHeader from "../components/RetroHeader.astro";
 import Marquee from "../components/Marquee.astro";
-import MusicPlayer from "../components/MusicPlayer.astro";
 import PostCard from "../components/PostCard.astro";
 import Sidebar from "../components/Sidebar.astro";
+import SiteNav from "../components/SiteNav.astro";
 import { blogroll, posts, recentPosts, site } from "../data/site.js";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/layout.css";
@@ -14,7 +14,7 @@ import "../styles/layout.css";
     <div class="retro-wrapper">
         <RetroHeader />
 
-        <MusicPlayer />
+        <SiteNav />
         <Marquee message={site.marquee} />
 
         <div class="content-grid">

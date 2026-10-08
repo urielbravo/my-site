@@ -1,0 +1,110 @@
+/*
+ * Reuses the old music player bar: same black panel, same magenta inset border,
+ * same chunky retro buttons — now they navigate instead of playing a track.
+ */
+.site-nav {
+    background: #000;
+    border: 3px inset #ff00ff;
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.8rem;
+    list-style: none;
+}
+
+.nav-button {
+    display: inline-block;
+    background: #222;
+    border: 3px outset #ff00ff;
+    color: #00ff00;
+    font-family: "VT323", monospace;
+    font-size: 1.4rem;
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-shadow: 0 0 4px lime;
+    box-shadow: 2px 2px 0 #330033;
+    transition: 0.05s linear;
+}
+
+.nav-button:hover {
+    color: #ffff00;
+    background: #330066;
+}
+
+.nav-button:active {
+    border-style: inset;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+/* ---------- HAMBURGER (small screens only) ---------- */
+.nav-toggle {
+    display: none;
+}
+
+@media (max-width: 750px) {
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        width: 100%;
+        background: #ff00ff;
+        color: #000;
+        border: 2px solid #00ffff;
+        padding: 0.4rem 0.8rem;
+        font-family: "VT323", monospace;
+        font-size: 2rem;
+        line-height: 1;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .nav-toggle:hover {
+        background: #ff99ff;
+    }
+
+    .nav-toggle:focus-visible {
+        outline: 2px dashed #ffff00;
+        outline-offset: 2px;
+    }
+
+    .nav-toggle-icon {
+        display: inline-block;
+    }
+
+    .nav-toggle-icon-open {
+        display: none;
+    }
+
+    .site-nav[data-open] .nav-toggle-icon-closed {
+        display: none;
+    }
+
+    .site-nav[data-open] .nav-toggle-icon-open {
+        display: inline-block;
+    }
+
+    /* Collapsed by default, stacked once the hamburger is pressed. */
+    .nav-links {
+        display: none;
+    }
+
+    .site-nav[data-open] .nav-links {
+        display: grid;
+        gap: 0.6rem;
+        margin-top: 0.8rem;
+    }
+
+    .nav-button {
+        display: block;
+        text-align: center;
+    }
+}

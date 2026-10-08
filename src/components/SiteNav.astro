@@ -1,0 +1,38 @@
+---
+import { navLinks } from "../data/site.js";
+import "./SiteNav.css";
+---
+
+<nav class="site-nav" data-nav aria-label="Main">
+    <button
+        type="button"
+        class="nav-toggle"
+        data-nav-toggle
+        aria-expanded="false"
+        aria-controls="site-nav-links"
+    >
+        <span class="nav-toggle-icon nav-toggle-icon-closed" aria-hidden="true"
+            >☰</span
+        >
+        <span class="nav-toggle-icon nav-toggle-icon-open" aria-hidden="true"
+            >✕</span
+        >
+        <span class="visually-hidden">Menu</span>
+    </button>
+
+    <ul class="nav-links" id="site-nav-links" data-nav-links>
+        {
+            navLinks.map((link) => (
+                <li>
+                    <a class="nav-button" href={link.href}>
+                        {link.label}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</nav>
+
+<script>
+    import "./SiteNav.js";
+</script>

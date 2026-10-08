@@ -1,6 +1,5 @@
 /**
- * Shared state for the two fake music players (header bar + sidebar widget),
- * so pressing ▶ in one keeps the other in sync.
+ * Shared state for the fake music player in the sidebar widget.
  *
  * @typedef {"idle" | "playing" | "paused" | "stopped"} PlayerStatus
  */
@@ -27,16 +26,10 @@ export function onStatusChange(listener) {
     return () => listeners.delete(listener);
 }
 
-/** Text shown in the header music player. */
-export function mainTrackLabel(state = status) {
-    const track = state === "playing" ? PLAYING_TRACK : IDLE_TRACK;
-    return state === "idle" ? `midi - ${track}` : `midi - ${track} (${state})`;
-}
-
 /** Text shown in the sidebar "Background Music" widget. */
 export function widgetTrackLabel(state = status) {
-    // Before any button is pressed the two players showed different titles in
-    // the original markup, so keep that quirk.
+    // Before any button is pressed the player showed a different title than the
+    // one the header used to, so keep that quirk.
     if (state === "idle") return "retro_theme.mid";
     const track = state === "playing" ? PLAYING_TRACK : IDLE_TRACK;
     return `${track} (${state})`;

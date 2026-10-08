@@ -92,6 +92,12 @@ export const blogroll = [
     { title: "Geocities Archive", href: "#" },
 ];
 
+export const navLinks = [
+    { label: "★ ABOUT", href: "#about" },
+    { label: "★ PROJECTS", href: "#projects" },
+    { label: "★ LINKS", href: "#links" },
+];
+
 export const site = {
     title: "Retro Theme · a modern grid tribute",
     tagline: "a theme from the past",
